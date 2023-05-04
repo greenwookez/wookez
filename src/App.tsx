@@ -10,7 +10,7 @@ const App: React.FC = () => {
   return (
     <div className={css(Styles.container)}>
       <div className={css(Styles.content)}>
-        <img src='/modern-problems-chapelle.gif' />
+        <img className={css(Styles.chapelle)} src='/modern-problems-chapelle.gif' />
         <button onClick={onContactClick}>Text me</button>
       </div>
     </div>
@@ -32,4 +32,9 @@ const Styles = CreateSheet({
     flexDirection: "column",
     gap: 20,
   },
+  chapelle: {
+    "@media(max-width: 500px)": {
+      width: 300,
+    }
+  }
 })
