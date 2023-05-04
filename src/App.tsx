@@ -34,7 +34,7 @@ const Styles = CreateSheet({
   },
   chapelle: {
     "@media(max-width: 500px)": {
-      width: 300,
-    }
-  }
+      width: "300px",
+    },
+  },
 })
