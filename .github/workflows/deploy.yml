@@ -1,0 +1,30 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'index.html'
+      - 'public/**'
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: '19.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to production
+        run: npm run deploy
